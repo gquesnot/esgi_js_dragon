@@ -8,6 +8,9 @@ class Fighter{
         this.attackRatio = 1
 
     }
+    attack (){
+        return getRandomInt(this.dmgMin, this.dmgMax) * this.attackRatio
+    }
 }
 
 
@@ -15,7 +18,9 @@ class Fighter{
 class Game{
     constructor() {
         this.round = 0
-
+        this.armor = 0
+        this.difficulty = 0
+        this.weapon = 0
         this.dragon = new Fighter()
         this.player = new Fighter()
         this.setDifficulty()
@@ -49,14 +54,14 @@ class Game{
     }
 
     dragonAttack(){
-        let dmg= getRandomInt(this.dragon.dmgMin, this.dragon.dmgMax) * this.dragon.attackRatio
+        let dmg= this.dragon.attack()
         console.log("dragon attack dmg", dmg)
         this.player.hp -= dmg
         return this.player.hp > 0
     }
 
     playerAttack(){
-        let dmg= getRandomInt(this.player.dmgMin, this.player.dmgMax) * this.player.attackRatio
+        let dmg= this.player.attack()
         console.log("player Attack dmg", dmg)
         this.dragon.hp -= dmg
         return this.dragon.hp > 0
