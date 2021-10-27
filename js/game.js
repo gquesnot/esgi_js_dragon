@@ -5,7 +5,7 @@ class Game {
         this.difficulty = 0
         this.weapon = 0
         this.dragon = new Fighter("dragon")
-        this.player = new Fighter("knight")
+        this.player = new Fighter("chevalier")
         this.setDifficulty()
         this.setWeapon()
         this.setArmor()
@@ -56,7 +56,7 @@ class Game {
         let dmg = this.dragon.attack()
         console.log("dragon attack dmg", dmg)
         this.player.getDamage(dmg)
-        this.coreHtml += "<p>Le dragon est plus rapide et vous brule ,il vous eneleve " + dmg + " PV</p>"
+        this.coreHtml += "<p>Le dragon est plus rapide et vous brule, il vous eneleve " + dmg + " PV</p>"
     }
 
     playerAttack() {
@@ -120,13 +120,13 @@ class Game {
         this.winnerHtml = "<div class=\"winner-div\">";
         if (this.player.isAlive()) {
             this.winnerHtml += "<img alt=\"dragon\" src=\"img/dragon.png\" class=\"winner-img\"/>" +
-                " <h3 class=\"text-center\">Vous avez gagner , vous êtes vraiment fort !</h3>" +
-                "<p class=\"text-center\"> il vous restait " + this.player.hp + " PV </p>"
+                " <h3 class=\"text-center-p-5\">Vous avez gagner , vous êtes vraiment fort !</h3>" +
+                "<p class=\"text-center-p-5\"> il vous restait " + this.player.hp + " PV </p>"
 
         } else {
             this.winnerHtml += "<img alt=\"chevalier\" src=\"img/knight.png\" class=\"winner-img\"/>" +
-                "<h3 class=\"text-center\">Vous avez perdu , vous avez été carboniser !</h3>" +
-                "<p class=\"text-center\"> il restait " + this.dragon.hp + " PV  au dragon</p>"
+                "<h3 class=\"text-center-p-5\">Vous avez perdu , vous avez été carboniser !</h3>" +
+                "<p class=\"text-center-p-5\"> il restait " + this.dragon.hp + " PV au dragon</p>"
         }
         this.winnerHtml += "</div>"
         document.querySelector('#game').innerHTML = this.winnerHtml + this.initHtml + this.coreHtml
