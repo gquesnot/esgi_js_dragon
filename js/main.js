@@ -23,29 +23,42 @@ class Game{
     }
 
     play(){
-        while (this.dragon.hp > 0 || this.player.hp > 0){
+        while (this.dragon.hp > 0 && this.player.hp > 0){
+            this.round += 1
             let playerStart = Math.random() < 0.5;
+            console.log('ROUND', this.round)
             if (playerStart){
+                if(! this.playerAttack()){
+                    break;
+                }
                 if(! this.dragonAttack()){
-                    return false
+                    break;
                 }
             }
             else{
+                if(! this.dragonAttack()){
+                    break;
+                }
                 if(! this.playerAttack()){
-                    return true
+                    break
                 }
             }
         }
+        console.log(this.round , this.player.hp , this.dragon.hp)
         return this.player.hp > 0
     }
 
     dragonAttack(){
-        this.player.hp -= getRandomInt(this.dragon.dmgMin, this.dragon.dmgMax) * this.dragon.attackRatio
+        let dmg= getRandomInt(this.dragon.dmgMin, this.dragon.dmgMax) * this.dragon.attackRatio
+        console.log("dragon attack dmg", dmg)
+        this.player.hp -= dmg
         return this.player.hp > 0
     }
 
     playerAttack(){
-        this.dragon.hp -= getRandomInt(this.player.dmgMin, this.player.dmgMax) * this.player.attackRatio
+        let dmg= getRandomInt(this.player.dmgMin, this.player.dmgMax) * this.player.attackRatio
+        console.log("player Attack dmg", dmg)
+        this.dragon.hp -= dmg
         return this.dragon.hp > 0
     }
 
@@ -56,24 +69,24 @@ class Game{
             this.dragon.dmgMin = 10
             this.dragon.dmgMax = 20
             this.player.hp = getRandomInt(200,250);
-            this.player.damageMin = 25
-            this.player.damageMax = 30
+            this.player.dmgMin = 25
+            this.player.dmgMax = 30
         }
         else if (this.difficulty === 2){
             this.dragon.hp = getRandomInt(200,250);
             this.dragon.dmgMin = 20
             this.dragon.dmgMax = 30
             this.player.hp = getRandomInt(200,250);
-            this.player.damageMin = 15
-            this.player.damageMax = 20
+            this.player.dmgMin = 15
+            this.player.dmgMax = 20
         }
         else if (this.difficulty === 3){
             this.dragon.hp = getRandomInt(200,250);
             this.dragon.dmgMin = 20
             this.dragon.dmgMax = 30
             this.player.hp = getRandomInt(150,200);
-            this.player.damageMin = 5
-            this.player.damageMax = 10
+            this.player.dmgMin = 5
+            this.player.dmgMax = 10
         }
     }
 
