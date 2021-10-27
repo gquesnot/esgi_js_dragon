@@ -118,7 +118,7 @@ class Game{
     }
 
     showGameWinner() {
-        document.querySelector('#game').innerHTML = this.winnerHtml+this.initHtml+this.coreHtml
+        document.querySelector('#game').innerHTML = this.winnerHtml + this.initHtml + this.coreHtml
     }
 }
 
