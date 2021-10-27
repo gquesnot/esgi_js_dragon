@@ -11,6 +11,10 @@ class Fighter{
     attack (){
         return getRandomInt(this.dmgMin, this.dmgMax) * this.attackRatio
     }
+    isAlive(){
+return this.hp >0;
+
+}
 }
 
 
@@ -32,20 +36,20 @@ class Game{
     }
 
     loop(){
-        while (this.dragon.hp > 0 && this.player.hp > 0){
+        while (this.dragon.isAlive() && this.player.isAlive()){
             this.round += 1
             let playerStart = Math.random() < 0.5;
             console.log('ROUND', this.round)
             if (playerStart){
-                if(! this.playerAttack()){
-                    break;
-                }
+               this.playerAttack()
+                    
+                
 
             }
             else{
-                if(! this.dragonAttack()){
-                    break;
-                }
+               this.dragonAttack()
+                    
+              
             }
         }
         console.log(this.round , this.player.hp , this.dragon.hp)
