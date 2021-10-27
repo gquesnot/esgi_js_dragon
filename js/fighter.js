@@ -8,11 +8,13 @@ class Fighter {
         this.attackRatio = 1
 
     }
-    getDamage(dmg){
+
+    getDamage(dmg) {
         this.hp -= dmg
         if (this.hp < 0)
             this.hp = 0
     }
+
     attack() {
         return Math.ceil(getRandomInt(this.dmgMin, this.dmgMax) * this.attackRatio)
     }

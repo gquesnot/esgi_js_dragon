@@ -1,61 +1,62 @@
 body {
-  min-height: calc(100vh - 100px);
-  margin: 0;
-  background: url(https://audreyhossepian.fr/img/logo.png),
+    min-height: calc(100vh - 100px);
+    margin: 0;
+    background: url(https://audreyhossepian.fr/img/logo.png),
     linear-gradient(40deg, #fc466b, #3f5efb);
-  background-position: 95% 99%;
-  background-repeat: no-repeat;
-  font-family: Arial, Helvetica, sans-serif;
-  padding: 50px;
-  color: white;
+    background-position: 95% 99%;
+    background-repeat: no-repeat;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 50px;
+    color: white;
 }
+
 table {
-  border-collapse: collapse;
-  text-align: center;
+    border-collapse: collapse;
+    text-align: center;
 }
+
 table td {
-  /* structure */
-  padding: 7px 10px;
+    /* structure */
+    padding: 7px 10px;
 
-  /* presentation */
-  border: 1px dashed white;
-  text-align: center;
+    /* presentation */
+    border: 1px dashed white;
+    text-align: center;
 }
 
-.text-center{
-  text-align: center;
-  padding: 5px 0;
-}
-
-
-.winner-div{
-  display: flex;
-  flex-direction: column;
-  border-top: 10px solid white;
-  border-left: 10px solid white;
-  border-right: 10px solid #A0A0A0;
-  border-bottom: 10px solid #A0A0A0;
-  width: 40%;
-  padding: 10px 0;
-  margin: 0 0 0 10rem;
-
+.text-center {
+    text-align: center;
+    padding: 5px 0;
 }
 
 
+.winner-div {
+    display: flex;
+    flex-direction: column;
+    border-top: 10px solid white;
+    border-left: 10px solid white;
+    border-right: 10px solid #A0A0A0;
+    border-bottom: 10px solid #A0A0A0;
+    width: 40%;
+    padding: 10px 0;
+    margin: 0 0 0 10rem;
 
-.winner-img{
-  padding: 20px;
-  object-fit: contain;
+}
+
+
+.winner-img {
+    padding: 20px;
+    object-fit: contain;
 }
 
 
 article {
-  margin-top: 50px;
-  background-color: rgba(255, 255, 255, 0.1);
-  padding: 30px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  max-width: 500px;
-  border: 10px white outset;
+    margin-top: 50px;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 500px;
+    border: 10px white outset;
 }

@@ -4,11 +4,11 @@ function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min)) + min;
 }
 
-function getInt(message, min, max){
-    let result =  parseInt(window.prompt(message));
+function getInt(message, min, max) {
+    let result = parseInt(window.prompt(message));
 
-    while ((result < min && result > max) || isNaN(result)){
-        let result =  parseInt(window.prompt(message));
+    while ((result < min && result > max) || isNaN(result)) {
+        let result = parseInt(window.prompt(message));
     }
     return result;
 }
