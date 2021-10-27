@@ -15,11 +15,15 @@ class Fighter{
 class Game{
     constructor() {
         this.round = 0
+
         this.dragon = new Fighter()
         this.player = new Fighter()
         this.setDifficulty()
         this.setWeapon()
         this.setArmor()
+        this.initHtml = ""
+        this.coreHtml = ""
+        this.winnerHtml = ""
     }
 
     loop(){
@@ -114,11 +118,12 @@ class Game{
     }
 
     showGameWinner() {
-
+        document.querySelector('#game').innerHTML = this.winnerHtml+this.initHtml+this.coreHtml
     }
 }
 
 let game = new Game()
 game.loop()
+game.showGameWinner()
 
 
