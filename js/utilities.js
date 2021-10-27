@@ -4,7 +4,7 @@ function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min)) + min;
 }
 
-function getInteger(message, min, max){
+function getInt(message, min, max){
     let result =  parseInt(window.prompt(message));
 
     while ((result < min && result > max) || isNaN(result)){
@@ -12,6 +12,5 @@ function getInteger(message, min, max){
     }
     return result;
 }
-
 
 
