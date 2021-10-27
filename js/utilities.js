@@ -6,8 +6,8 @@ function getRandomInt(min, max) {
 
 function getInteger(message, min, max){
     let result =  parseInt(window.prompt(message));
-    console.log(result)
-    while (result < min || result > max){
+
+    while ((result < min && result > max) || isNaN(result)){
         let result =  parseInt(window.prompt(message));
     }
     return result;

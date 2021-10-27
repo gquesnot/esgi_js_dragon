@@ -22,7 +22,7 @@ class Game{
         this.setArmor()
     }
 
-    play(){
+    loop(){
         while (this.dragon.hp > 0 && this.player.hp > 0){
             this.round += 1
             let playerStart = Math.random() < 0.5;
@@ -31,20 +31,16 @@ class Game{
                 if(! this.playerAttack()){
                     break;
                 }
-                if(! this.dragonAttack()){
-                    break;
-                }
+
             }
             else{
                 if(! this.dragonAttack()){
                     break;
                 }
-                if(! this.playerAttack()){
-                    break
-                }
             }
         }
         console.log(this.round , this.player.hp , this.dragon.hp)
+        this.showGameWinner()
         return this.player.hp > 0
     }
 
@@ -116,9 +112,13 @@ class Game{
             this.dragon.attackRatio = 0.5
         }
     }
+
+    showGameWinner() {
+
+    }
 }
 
 let game = new Game()
-game.play()
+game.loop()
 
 
