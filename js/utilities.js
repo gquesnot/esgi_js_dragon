@@ -12,3 +12,6 @@ function getInteger(message, min, max){
     }
     return result;
 }
+
+
+
